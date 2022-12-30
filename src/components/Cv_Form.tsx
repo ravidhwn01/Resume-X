@@ -3,37 +3,38 @@ import InputText from './InputText'
 import TextArea from './TextArea';
 
 const CvForm = () => {
+  const addNewWEField = () => {
+    let newNode = document.createElement("textarea");
+    newNode.className = "form-control weField";
+    newNode.rows = 3;
+    newNode.placeholder = "Enter here";
+    let weOb = document.getElementById("we");
+    let weAddButtonOb = document.getElementById("weAddButton");
+    weOb?.insertBefore(newNode, weAddButtonOb);
+  };
 
-    const addNewWEField =()=> {
-        let newNode = document.createElement("textarea");
-        newNode.classList.add("form-control");
-        newNode.classList.add("weField");
-        newNode.classList.add("mt-2");
-        newNode.setAttribute("placeholder", "Enter here");
-        let weOb = document.getElementById("we");
-        let weAddButton = document.getElementById("weAddButton");
-        // weOb.insertBefore(newNode, weAddButton);
-      }
-      const addNewAQField = ()=> {
-        let newNode = document.createElement("textarea");
-        newNode.classList.add("form-control");
-        newNode.classList.add("eqField");
-        newNode.classList.add("mt-2");
-        newNode.setAttribute("placeholder", "Enter here");
-        let aqOb = document.getElementById("aq");
-        let aqAddButton = document.getElementById("aqAddButton");
-        // aqOb.insertBefore(newNode, aqAddButton);
-      }
+  const addNewAQField = () => {
+    let newNode = document.createElement("textarea");
+    newNode.className = "form-control eqField";
+    newNode.rows = 3;
+    newNode.placeholder = "Enter here";
+    let aqOb = document.getElementById("aq");
+    let aqAddButtonOb = document.getElementById("aqAddButton");
+    aqOb?.insertBefore(newNode, aqAddButtonOb);
+  };
+
+
+   
   return (
       <>
         <div className="container" id="cv-form">
-      <h1 className="text-center">Resume Maker</h1>
-      <p className="text-center">A Most Visitable Site</p>
+      <h1 className="text-center">Resume-X</h1>
+      <p className="text-center">A Fastest Resume Maker Website</p>
       <div className="row">
         <div className="col-md-6 p-5">
-         
           <h1 className="text-center">Personal Information</h1>
           <div className="form-group">
+          <label htmlFor="name">Name</label>
             <InputText
               type="text"
               className="form-control"
@@ -42,6 +43,7 @@ const CvForm = () => {
             />
           </div>
           <div className="form-group">
+          <label htmlFor="contact">Your Contact</label>
             <InputText
               type="text"
               className="form-control"
@@ -50,10 +52,21 @@ const CvForm = () => {
             />
           </div>
           <div className="form-group">
+          <label htmlFor="contact">Your Email Address</label>
+            <InputText
+              type="text"
+              className="form-control"
+              id="email"
+              placeholder="Enter Your email "
+            />
+          </div>
+          <div className="form-group">
+          <label htmlFor="address">Your Address</label>
             <TextArea
               type="text"
               className="form-control"
               id="address"
+              rows = '3'
               placeholder="Enter Your Address "
             ></TextArea>
           </div>
@@ -132,7 +145,7 @@ const CvForm = () => {
               placeholder="Enter here "
             ></TextArea>
             <div className="container text-center m-3 p-2" id="aqAddButton">
-              <button onClick={addNewWEField} className="btn btn-light btn-sm">
+              <button onClick={addNewAQField} className="btn btn-light btn-sm">
                 Add More
               </button>
             </div>

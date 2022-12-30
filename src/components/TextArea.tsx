@@ -3,7 +3,7 @@ import React from 'react'
 const TextArea = (props:any) => {
   return (
     <>
-    <textarea  className = {props.className} placeholder={props.placeholder}></textarea>
+    <textarea rows={props.rows} className = {props.className} placeholder={props.placeholder}></textarea>
     </>
   )
 }
