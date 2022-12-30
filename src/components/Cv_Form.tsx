@@ -7,6 +7,7 @@ const CvForm = () => {
     let newNode = document.createElement("textarea");
     newNode.className = "form-control weField";
     newNode.rows = 3;
+    newNode.classList.add("mt-2");
     newNode.placeholder = "Enter here";
     let weOb = document.getElementById("we");
     let weAddButtonOb = document.getElementById("weAddButton");
@@ -17,6 +18,7 @@ const CvForm = () => {
     let newNode = document.createElement("textarea");
     newNode.className = "form-control eqField";
     newNode.rows = 3;
+    newNode.classList.add("mt-2");
     newNode.placeholder = "Enter here";
     let aqOb = document.getElementById("aq");
     let aqAddButtonOb = document.getElementById("aqAddButton");
@@ -34,7 +36,7 @@ const CvForm = () => {
         <div className="col-md-6 p-5">
           <h1 className="text-center">Personal Information</h1>
           <div className="form-group">
-          <label htmlFor="name">Name</label>
+          <label htmlFor="name"> Name</label>
             <InputText
               type="text"
               className="form-control"
@@ -43,7 +45,7 @@ const CvForm = () => {
             />
           </div>
           <div className="form-group">
-          <label htmlFor="contact">Your Contact</label>
+          <label htmlFor="contact"> Contact</label>
             <InputText
               type="text"
               className="form-control"
@@ -52,7 +54,7 @@ const CvForm = () => {
             />
           </div>
           <div className="form-group">
-          <label htmlFor="contact">Your Email Address</label>
+          <label htmlFor="contact"> Email </label>
             <InputText
               type="text"
               className="form-control"
@@ -61,7 +63,7 @@ const CvForm = () => {
             />
           </div>
           <div className="form-group">
-          <label htmlFor="address">Your Address</label>
+          <label htmlFor="address"> Address</label>
             <TextArea
               type="text"
               className="form-control"
@@ -73,24 +75,8 @@ const CvForm = () => {
          
           <div className="links">
             <h4 className="text-center m-3">Important Links</h4>
-
             <div className="form-group">
-              <InputText
-                type="text"
-                className="form-control"
-                id="facebook"
-                placeholder="Enter here "
-              />
-            </div>
-            <div className="form-group">
-              <InputText
-                type="text"
-                className="form-control"
-                id="instagram"
-                placeholder="Enter here "
-              />
-            </div>
-            <div className="form-group">
+            <label htmlFor="github">github</label>
               <InputText
                 type="text"
                 className="form-control"
@@ -99,6 +85,7 @@ const CvForm = () => {
               />
             </div>
             <div className="form-group">
+            <label htmlFor="linkedIn">linkedIn</label>
               <InputText
                 type="text"
                 className="form-control"
@@ -114,6 +101,7 @@ const CvForm = () => {
          
           <h1 className="text-center">Professional Information</h1>
           <div className="form-group">
+          <label htmlFor="objective">Objective</label>
             <TextArea
             id="objective"
               type="text"
@@ -122,6 +110,8 @@ const CvForm = () => {
             ></TextArea>
           </div>
           <div className="form-group" id="we">
+          <label htmlFor="objective">Work Experience</label>
+
             <TextArea
            
               type="text"
@@ -138,6 +128,7 @@ const CvForm = () => {
             </div>
           </div>
           <div className="form-group" id="aq">
+          <label htmlFor="objective">Academic Qualification</label>
             <TextArea
               type="text"
               className="form-control eqField"
@@ -152,10 +143,12 @@ const CvForm = () => {
           </div>
         </div>
        
-        {/* <div className="container mt-3 mb-3 text-center">
-          <button onClick={generateCV} className="btn btn-light"/>
+        <div className="container mt-3 mb-3 text-center">
+          <button
+          //  onClick={generateCV}
+            className="btn btn-light"/>
             Generate CV
-       </div> */}
+       </div>
         </div>
         </div>
     
