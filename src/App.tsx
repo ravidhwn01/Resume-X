@@ -1,12 +1,15 @@
 import React from 'react';
+import CvForm from './components/Cv_Form';
 
-import './App.css';
+import InputText from './components/InputText';
+import TextArea from './components/TextArea';
 
 function App() {
   return (
-    <div className="App">
-      <h1>hi</h1>
-    </div>
+    <>
+    <CvForm/>
+   
+    </>
   );
 }
 
