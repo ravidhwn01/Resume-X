@@ -26,16 +26,12 @@ const CvForm = () => {
   };
 
  const generateCV = () => {
-    // let nameField = document.getElementById("name") as HTMLInputElement;
-    // let nameT1 = document.getElementById("nameT1");
-    // nameT1.innerHTML = nameField;
-    // document.getElementById("nameT2").innerHTML = nameField;
-    // let contact = document.getElementById("contact") as HTMLInputElement;
-    // let email = document.getElementById("email") as HTMLInputElement;
-    // let address = document.getElementById("address") as HTMLInputElement;
-    // let github = document.getElementById("github") as HTMLInputElement;
-    // let linkedIn = document.getElementById("linkedIn") as HTMLInputElement;
-    // let objective = document.getElementById("objective") as HTMLInputElement;
+  console.log(`hello cv generator`)
+  
+ 
+ 
+
+    
 
  }
 
@@ -160,7 +156,7 @@ const CvForm = () => {
        
         <div className="container mt-3 mb-3 text-center">
           <button
-          //  onClick={generateCV}
+           onClick={generateCV}
             className="btn btn-light">
             Generate CV
           </button>
