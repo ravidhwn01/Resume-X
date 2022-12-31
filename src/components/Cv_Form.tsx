@@ -25,6 +25,21 @@ const CvForm = () => {
     aqOb?.insertBefore(newNode, aqAddButtonOb);
   };
 
+ const generateCV = () => {
+    // let nameField = document.getElementById("name") as HTMLInputElement;
+    // let nameT1 = document.getElementById("nameT1");
+    // nameT1.innerHTML = nameField;
+    // document.getElementById("nameT2").innerHTML = nameField;
+    // let contact = document.getElementById("contact") as HTMLInputElement;
+    // let email = document.getElementById("email") as HTMLInputElement;
+    // let address = document.getElementById("address") as HTMLInputElement;
+    // let github = document.getElementById("github") as HTMLInputElement;
+    // let linkedIn = document.getElementById("linkedIn") as HTMLInputElement;
+    // let objective = document.getElementById("objective") as HTMLInputElement;
+
+ }
+
+
 
    
   return (
@@ -146,11 +161,86 @@ const CvForm = () => {
         <div className="container mt-3 mb-3 text-center">
           <button
           //  onClick={generateCV}
-            className="btn btn-light"/>
+            className="btn btn-light">
             Generate CV
+          </button>
        </div>
         </div>
         </div>
+
+        {/* cv template */}
+        <div className="container" id="cv-template">
+        <div className="row " id="cvtemplt">
+        <div className="col-md-4 ">
+        {/* <img src="/images/signn22.jpg" className="img-fluid" alt="loading..."/> */}
+        
+        <p id="nameT1" >ravi kumar dhawan</p>
+        <p id="contactT" >+91-12423423523,+91-3464356436</p>
+        <p id="emailT" >xyz@xyz.com</p>
+        <p id="addressT" >23-c sector delhi</p>
+      
+        <p  > <a id="githubT" href="#1"> </a></p>
+        <p  > <a id="inkedT" href="#1"> </a></p>
+        </div>
+        <div className="col-md-8 ">
+         
+          <h1 id="nameT2" >ravi kumar dhawan</h1>
+       
+        <div className="card">
+          <div className="card-header">
+            <div className="card-body">
+              <h3>Objective</h3>
+              <p id="objectiveT" >to become a web developer Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quae quo nemo maiores! Lorem ipsum dolor sit amet consectetur, adipisicing elit. Autem, doloremque asperiores. Sint to become a web developer Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quae quo nemo maiores! Lorem ipsum dolor sit amet consectetur, adipisicing elit. Autem, doloremque asperiores. Sint. </p>
+            </div>
+          </div>
+        </div>
+        <div className="card">
+          <div className="card-header">
+            <div className="card-body">
+              <h3>Work Experience</h3>
+              <ul id="weT" >
+                <li>
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad, sed.
+                </li>
+                <li>
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad, sed.
+                </li>
+                <li>
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad, sed.
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div className="card">
+          <div className="card-header">
+            <div className="card-body">
+              <h3>Academic Qualification</h3>
+              <ul id="aqT" >
+                <li>
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad, sed.
+                </li>
+                <li>
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad, sed.
+                </li>
+                <li>
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad, sed.
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      
+      </div>
+    </div>
+    <div className="container mt-3 text-center">
+      <button 
+      // onClick={printCV} className="btn btn-light"
+      >
+        print CV
+      </button>
+    </div>
+    </div>
     
         </>
   )
