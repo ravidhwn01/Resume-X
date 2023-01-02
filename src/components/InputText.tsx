@@ -1,10 +1,10 @@
 import React from 'react'
 
-const InputText = (props:any) => {
+const InputText = (props: any) => {
   return (
     <>
-      <input type={props.type} className = {props.className} id = {props.id} placeholder = {props.placeholder} />
-      
+      <input type={props.type} className={props.className} id={props.id} placeholder={props.placeholder} />
+
     </>
   )
 }
