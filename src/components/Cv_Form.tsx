@@ -2,6 +2,8 @@ import React from 'react'
 import InputText from './InputText'
 import TextArea from './TextArea';
 
+
+
 const CvForm = () => {
   const addNewWEField = () => {
     let newNode = document.createElement("textarea");
@@ -14,6 +16,7 @@ const CvForm = () => {
     weOb?.insertBefore(newNode, weAddButtonOb);
   };
 
+  
   const addNewAQField = () => {
     let newNode = document.createElement("textarea");
     newNode.className = "form-control eqField";
