@@ -61,8 +61,8 @@ const CvForm = () => {
     document.getElementById("inkedT")!.innerHTML = linkedIn.value;
     document.getElementById("objectiveT")!.innerHTML = objective.value;
     
-    document.getElementById("cv-form")!.style.display = "none";
-    document.getElementById("cv-template")!.style.display = "block";
+    // document.getElementById("cv-form")!.style.display = "none";
+    // document.getElementById("cv-template")!.style.display = "block";
   }
 
   const printCV = ()=>{
