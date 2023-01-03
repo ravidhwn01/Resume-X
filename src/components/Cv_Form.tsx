@@ -29,23 +29,53 @@ const CvForm = () => {
   };
 
   const generateCV = () => {
-    console.log(`hello cv generator`)
+    let name = document.getElementById("name") as HTMLInputElement;
+    let contact = document.getElementById("contact") as HTMLInputElement;
+    let email = document.getElementById("email") as HTMLInputElement;
+    let address = document.getElementById("address") as HTMLInputElement;
+    let github = document.getElementById("github") as HTMLInputElement;
+    let linkedIn = document.getElementById("linkedIn") as HTMLInputElement;
+    let objective = document.getElementById("objective") as HTMLInputElement;
 
+    let weHTML = document.getElementsByClassName("weField");
+    let str = "";
+    for (let e of weHTML as any) {
+      str = str + `<li> ${e.value} </li>`;
+    }
+    document.getElementById("weT")!.innerHTML = str;
 
+    let aqHTML = document.getElementsByClassName("eqField");
+    let str2 = "";
+    for (let e of aqHTML as any) {
+      str2 = str2 + `<li> ${e.value} </li>`;
+    }
+    document.getElementById("aqT")!.innerHTML = str2;
 
-
-
-
+    
+    document.getElementById("nameT1")!.innerHTML = name.value;
+    document.getElementById("nameT2")!.innerHTML = name.value;
+    document.getElementById("contactT")!.innerHTML = contact.value;
+    document.getElementById("emailT")!.innerHTML = email.value;
+    document.getElementById("addressT")!.innerHTML = address.value;
+    document.getElementById("githubT")!.innerHTML = github.value;
+    document.getElementById("inkedT")!.innerHTML = linkedIn.value;
+    document.getElementById("objectiveT")!.innerHTML = objective.value;
+    
+    document.getElementById("cv-form")!.style.display = "none";
+    document.getElementById("cv-template")!.style.display = "block";
   }
 
+  const printCV = ()=>{
+    window.print();
+  }
 
 
 
   return (
     <>
       <div className="container" id="cv-form">
-        <h1 className="text-center">Resume-X</h1>
-        <p className="text-center">A Fastest Resume Maker Website</p>
+        <h1 className="text-center">R&#232;sume-X</h1>
+        <p className="text-center">The Fastest R&#232;sume Maker Website</p>
         <div className="row">
           <div className="col-md-6 p-5">
             <h1 className="text-center">Personal Information</h1>
@@ -217,7 +247,7 @@ const CvForm = () => {
                   <h3>Academic Qualification</h3>
                   <ul id="aqT" >
                     <li>
-                      Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad, sed.
+                     Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque fugit explicabo dicta.
                     </li>
                     <li>
                       Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad, sed.
@@ -234,7 +264,7 @@ const CvForm = () => {
         </div>
         <div className="container mt-3 text-center">
           <button
-          // onClick={printCV} className="btn btn-light"
+          onClick={printCV} className="btn btn-light"
           >
             print CV
           </button>
