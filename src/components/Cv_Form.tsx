@@ -235,7 +235,7 @@ const generateCV = () => {
           </div>
           <div className="col-md-8 ">
 
-            <h1 id="nameT2" >{nameT2}</h1>
+            <h1 id="nameT2" >{}</h1>
 
             <div className="card">
               <div className="card-header">
