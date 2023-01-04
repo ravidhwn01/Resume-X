@@ -1,8 +1,7 @@
 import React from 'react';
 import CvForm from './components/Cv_Form';
+import './index.css';
 
-import InputText from './components/InputText';
-import TextArea from './components/TextArea';
 
 function App() {
   return (

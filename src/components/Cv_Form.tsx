@@ -1,6 +1,7 @@
-import React from 'react'
+import React, { useState } from 'react'
 import InputText from './InputText'
 import TextArea from './TextArea';
+
 
 
 
@@ -28,43 +29,65 @@ const CvForm = () => {
     aqOb?.insertBefore(newNode, aqAddButtonOb);
   };
 
-  const generateCV = () => {
-    let name = document.getElementById("name") as HTMLInputElement;
-    let contact = document.getElementById("contact") as HTMLInputElement;
-    let email = document.getElementById("email") as HTMLInputElement;
-    let address = document.getElementById("address") as HTMLInputElement;
-    let github = document.getElementById("github") as HTMLInputElement;
-    let linkedIn = document.getElementById("linkedIn") as HTMLInputElement;
-    let objective = document.getElementById("objective") as HTMLInputElement;
+  // const generateCV = () => {
+  //   let name = document.getElementById("name") as HTMLInputElement;
+  //   let contact = document.getElementById("contact") as HTMLInputElement;
+  //   let email = document.getElementById("email") as HTMLInputElement;
+  //   let address = document.getElementById("address") as HTMLInputElement;
+  //   let github = document.getElementById("github") as HTMLInputElement;
+  //   let linkedIn = document.getElementById("linkedIn") as HTMLInputElement;
+  //   let objective = document.getElementById("objective") as HTMLInputElement;
 
-    let weHTML = document.getElementsByClassName("weField");
-    let str = "";
-    for (let e of weHTML as any) {
-      str = str + `<li> ${e.value} </li>`;
-    }
-    document.getElementById("weT")!.innerHTML = str;
+  //   let weHTML = document.getElementsByClassName("weField");
+  //   let str = "";
+  //   for (let e of weHTML as any) {
+  //     str = str + `<li> ${e.value} </li>`;
+  //   }
+  //   document.getElementById("weT")!.innerHTML = str;
 
-    let aqHTML = document.getElementsByClassName("eqField");
-    let str2 = "";
-    for (let e of aqHTML as any) {
-      str2 = str2 + `<li> ${e.value} </li>`;
-    }
-    document.getElementById("aqT")!.innerHTML = str2;
+  //   let aqHTML = document.getElementsByClassName("eqField");
+  //   let str2 = "";
+  //   for (let e of aqHTML as any) {
+  //     str2 = str2 + `<li> ${e.value} </li>`;
+  //   }
+  //   document.getElementById("aqT")!.innerHTML = str2;
 
     
-    document.getElementById("nameT1")!.innerHTML = name.value;
-    document.getElementById("nameT2")!.innerHTML = name.value;
-    document.getElementById("contactT")!.innerHTML = contact.value;
-    document.getElementById("emailT")!.innerHTML = email.value;
-    document.getElementById("addressT")!.innerHTML = address.value;
-    document.getElementById("githubT")!.innerHTML = github.value;
-    document.getElementById("inkedT")!.innerHTML = linkedIn.value;
-    document.getElementById("objectiveT")!.innerHTML = objective.value;
+  //   document.getElementById("nameT1")!.innerHTML = name.value;
+  //   document.getElementById("nameT2")!.innerHTML = name.value;
+  //   document.getElementById("contactT")!.innerHTML = contact.value;
+  //   document.getElementById("emailT")!.innerHTML = email.value;
+  //   document.getElementById("addressT")!.innerHTML = address.value;
+  //   document.getElementById("githubT")!.setAttribute("href", github.value);
+   
+  //   document.getElementById("inkedT")!.innerHTML = linkedIn.value;
+  //   document.getElementById("objectiveT")!.innerHTML = objective.value;
     
-    // document.getElementById("cv-form")!.style.display = "none";
-    // document.getElementById("cv-template")!.style.display = "block";
-  }
+  //   // document.getElementById("cv-form")!.style.display = "none";
+  //   // document.getElementById("cv-template")!.style.display = "block";
+  // }
 
+const [name, setName] = useState("")
+const [contact, setContact] = useState("") 
+const [email, setEmail] = useState("")
+const [address, setAddress] = useState("")
+const [github, setGithub] = useState("")
+const [linkedIn, setLinkedIn] = useState("")
+const [objective, setObjective] = useState("")
+const [we, setWe] = useState("")
+const [aq, setAq] = useState("")
+
+
+
+
+
+
+const generateCV = () => {
+ 
+  document.getElementById("cv-form")!.style.display = "none";
+  document.getElementById("cv-template")!.style.display = "block";
+
+}
   const printCV = ()=>{
     window.print();
   }
@@ -157,7 +180,6 @@ const CvForm = () => {
               <label htmlFor="objective">Work Experience</label>
 
               <TextArea
-
                 type="text"
                 className="form-control weField"
                 rows="3"
@@ -203,17 +225,17 @@ const CvForm = () => {
           <div className="col-md-4 ">
             {/* <img src="/images/signn22.jpg" className="img-fluid" alt="loading..."/> */}
 
-            <p id="nameT1" >ravi kumar dhawan</p>
+            <p id="nameT1" >{name}</p>
             <p id="contactT" >+91-12423423523,+91-3464356436</p>
             <p id="emailT" >xyz@xyz.com</p>
             <p id="addressT" >23-c sector delhi</p>
 
-            <p  > <a id="githubT" href="#1"> </a></p>
-            <p  > <a id="inkedT" href="#1"> </a></p>
+            <p  > <a id="githubT" href="#1"> github</a></p>
+            <p  > <a id="inkedT" href="#1"> linkedIn</a></p>
           </div>
           <div className="col-md-8 ">
 
-            <h1 id="nameT2" >ravi kumar dhawan</h1>
+            <h1 id="nameT2" >{nameT2}</h1>
 
             <div className="card">
               <div className="card-header">
