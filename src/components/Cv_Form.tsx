@@ -1,6 +1,5 @@
 import React, { useState } from 'react'
-import InputText from './InputText'
-import TextArea from './TextArea';
+
 
 
 
@@ -17,7 +16,7 @@ const CvForm = () => {
     weOb?.insertBefore(newNode, weAddButtonOb);
   };
 
-  
+
   const addNewAQField = () => {
     let newNode = document.createElement("textarea");
     newNode.className = "form-control eqField";
@@ -29,66 +28,19 @@ const CvForm = () => {
     aqOb?.insertBefore(newNode, aqAddButtonOb);
   };
 
-  // const generateCV = () => {
-  //   let name = document.getElementById("name") as HTMLInputElement;
-  //   let contact = document.getElementById("contact") as HTMLInputElement;
-  //   let email = document.getElementById("email") as HTMLInputElement;
-  //   let address = document.getElementById("address") as HTMLInputElement;
-  //   let github = document.getElementById("github") as HTMLInputElement;
-  //   let linkedIn = document.getElementById("linkedIn") as HTMLInputElement;
-  //   let objective = document.getElementById("objective") as HTMLInputElement;
-
-  //   let weHTML = document.getElementsByClassName("weField");
-  //   let str = "";
-  //   for (let e of weHTML as any) {
-  //     str = str + `<li> ${e.value} </li>`;
-  //   }
-  //   document.getElementById("weT")!.innerHTML = str;
-
-  //   let aqHTML = document.getElementsByClassName("eqField");
-  //   let str2 = "";
-  //   for (let e of aqHTML as any) {
-  //     str2 = str2 + `<li> ${e.value} </li>`;
-  //   }
-  //   document.getElementById("aqT")!.innerHTML = str2;
-
-    
-  //   document.getElementById("nameT1")!.innerHTML = name.value;
-  //   document.getElementById("nameT2")!.innerHTML = name.value;
-  //   document.getElementById("contactT")!.innerHTML = contact.value;
-  //   document.getElementById("emailT")!.innerHTML = email.value;
-  //   document.getElementById("addressT")!.innerHTML = address.value;
-  //   document.getElementById("githubT")!.setAttribute("href", github.value);
-   
-  //   document.getElementById("inkedT")!.innerHTML = linkedIn.value;
-  //   document.getElementById("objectiveT")!.innerHTML = objective.value;
-    
-  //   // document.getElementById("cv-form")!.style.display = "none";
-  //   // document.getElementById("cv-template")!.style.display = "block";
-  // }
-
-const [name, setName] = useState("")
-const [contact, setContact] = useState("") 
-const [email, setEmail] = useState("")
-const [address, setAddress] = useState("")
-const [github, setGithub] = useState("")
-const [linkedIn, setLinkedIn] = useState("")
-const [objective, setObjective] = useState("")
-const [we, setWe] = useState("")
-const [aq, setAq] = useState("")
 
 
 
 
 
 
-const generateCV = () => {
- 
-  document.getElementById("cv-form")!.style.display = "none";
-  document.getElementById("cv-template")!.style.display = "block";
+  const generateCV = () => {
 
-}
-  const printCV = ()=>{
+    document.getElementById("cv-form")!.style.display = "none";
+    document.getElementById("cv-template")!.style.display = "block";
+
+  }
+  const printCV = () => {
     window.print();
   }
 
@@ -97,14 +49,15 @@ const generateCV = () => {
   return (
     <>
       <div className="container" id="cv-form">
-        <h1 className="text-center">R&#232;sume-X</h1>
-        <p className="text-center">The Fastest R&#232;sume Maker Website</p>
+        <h1 className="text-center">Resume Maker</h1>
+        <p className="text-center">A Most Visitable Site</p>
         <div className="row">
           <div className="col-md-6 p-5">
+
             <h1 className="text-center">Personal Information</h1>
             <div className="form-group">
-              <label htmlFor="name"> Name</label>
-              <InputText
+              <label htmlFor="name">Name</label>
+              <input
                 type="text"
                 className="form-control"
                 id="name"
@@ -112,8 +65,8 @@ const generateCV = () => {
               />
             </div>
             <div className="form-group">
-              <label htmlFor="contact"> Contact</label>
-              <InputText
+              <label htmlFor="contact">Your Contact</label>
+              <input
                 type="text"
                 className="form-control"
                 id="contact"
@@ -121,30 +74,39 @@ const generateCV = () => {
               />
             </div>
             <div className="form-group">
-              <label htmlFor="contact"> Email </label>
-              <InputText
-                type="text"
-                className="form-control"
-                id="email"
-                placeholder="Enter Your email "
-              />
-            </div>
-            <div className="form-group">
-              <label htmlFor="address"> Address</label>
-              <TextArea
-                type="text"
+              <label htmlFor="address">Your Address</label>
+              <textarea
+
                 className="form-control"
                 id="address"
-                rows='3'
                 placeholder="Enter Your Address "
-              ></TextArea>
+              ></textarea>
             </div>
 
             <div className="links">
               <h4 className="text-center m-3">Important Links</h4>
+
+              <div className="form-group">
+                <label htmlFor="facebook">facebook</label>
+                <input
+                  type="text"
+                  className="form-control"
+                  id="facebook"
+                  placeholder="Enter here "
+                />
+              </div>
+              <div className="form-group">
+                <label htmlFor="instagram">instagram</label>
+                <input
+                  type="text"
+                  className="form-control"
+                  id="instagram"
+                  placeholder="Enter here "
+                />
+              </div>
               <div className="form-group">
                 <label htmlFor="github">github</label>
-                <InputText
+                <input
                   type="text"
                   className="form-control"
                   id="github"
@@ -153,7 +115,7 @@ const generateCV = () => {
               </div>
               <div className="form-group">
                 <label htmlFor="linkedIn">linkedIn</label>
-                <InputText
+                <input
                   type="text"
                   className="form-control"
                   id="linkedIn"
@@ -169,22 +131,22 @@ const generateCV = () => {
             <h1 className="text-center">Professional Information</h1>
             <div className="form-group">
               <label htmlFor="objective">Objective</label>
-              <TextArea
+              <textarea
                 id="objective"
-                type="text"
+
                 className="form-control"
                 placeholder="Enter here "
-              ></TextArea>
+              ></textarea>
             </div>
             <div className="form-group" id="we">
               <label htmlFor="objective">Work Experience</label>
+              <textarea
 
-              <TextArea
-                type="text"
+
                 className="form-control weField"
-                rows="3"
+
                 placeholder="Enter here "
-              ></TextArea>
+              ></textarea>
 
 
               <div className="container text-center m-3 p-2" id="weAddButton">
@@ -195,12 +157,12 @@ const generateCV = () => {
             </div>
             <div className="form-group" id="aq">
               <label htmlFor="objective">Academic Qualification</label>
-              <TextArea
-                type="text"
+              <textarea
+
                 className="form-control eqField"
-                rows="3"
+
                 placeholder="Enter here "
-              ></TextArea>
+              ></textarea>
               <div className="container text-center m-3 p-2" id="aqAddButton">
                 <button onClick={addNewAQField} className="btn btn-light btn-sm">
                   Add More
@@ -210,32 +172,31 @@ const generateCV = () => {
           </div>
 
           <div className="container mt-3 mb-3 text-center">
-            <button
-              onClick={generateCV}
-              className="btn btn-light">
+            <button onClick={generateCV} className="btn btn-light">
               Generate CV
             </button>
           </div>
         </div>
       </div>
 
-      {/* cv template */}
+
       <div className="container" id="cv-template">
         <div className="row " id="cvtemplt">
           <div className="col-md-4 ">
-            {/* <img src="/images/signn22.jpg" className="img-fluid" alt="loading..."/> */}
 
-            <p id="nameT1" >{name}</p>
+
+            <p id="nameT1" >ravi kumar dhawan</p>
             <p id="contactT" >+91-12423423523,+91-3464356436</p>
-            <p id="emailT" >xyz@xyz.com</p>
             <p id="addressT" >23-c sector delhi</p>
 
-            <p  > <a id="githubT" href="#1"> github</a></p>
-            <p  > <a id="inkedT" href="#1"> linkedIn</a></p>
+            <p > <a id="fbT" href="#1"> </a></p>
+            <p  > <a id="instaT" href="#1"> </a></p>
+            <p  > <a id="githubT" href="#1"> </a></p>
+            <p  > <a id="inkedT" href="#1"> </a></p>
           </div>
           <div className="col-md-8 ">
 
-            <h1 id="nameT2" >{}</h1>
+            <h1 id="nameT2" >ravi kumar dhawan</h1>
 
             <div className="card">
               <div className="card-header">
@@ -269,7 +230,7 @@ const generateCV = () => {
                   <h3>Academic Qualification</h3>
                   <ul id="aqT" >
                     <li>
-                     Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque fugit explicabo dicta.
+                      Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad, sed.
                     </li>
                     <li>
                       Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad, sed.
@@ -285,15 +246,16 @@ const generateCV = () => {
           </div>
         </div>
         <div className="container mt-3 text-center">
-          <button
-          onClick={printCV} className="btn btn-light"
-          >
+          <button 
+          onClick={printCV}
+          className="btn btn-light">
             print CV
           </button>
         </div>
       </div>
 
     </>
+
   )
 }
 
