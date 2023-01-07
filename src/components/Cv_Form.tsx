@@ -28,14 +28,48 @@ const CvForm = () => {
     aqOb?.insertBefore(newNode, aqAddButtonOb);
   };
 
+  const [resumeForm, setResumeForm] = useState({
+    name: "",
+    contact: "",
+    address: "",
+    facebook: "",
+    instagram: "",
+    github: "",
+    linkedin: "",
+    objective: "", 
+
+  })
 
 
 
+const handleInput = (event:any)=>{
+  const name = event.target.name;
+  const value = event.target.value;
+  console.log(name)
+  console.log(value)
+
+  setResumeForm({...resumeForm, [name]: value})
+
+
+}
 
 
 
-  const generateCV = () => {
-
+  const generateCV = (e:any) => {
+    e.preventDefault();
+    const newRecord = {...resumeForm,id:new Date().getTime().toString()};
+    console.log(newRecord)
+    setResumeForm({
+      name: "",
+      contact: "",
+      address: "",
+      facebook: "",
+      instagram: "",
+      github: "",
+      linkedin: "",
+      objective: "",
+      
+    })
     document.getElementById("cv-form")!.style.display = "none";
     document.getElementById("cv-template")!.style.display = "block";
 
@@ -57,29 +91,39 @@ const CvForm = () => {
             <h1 className="text-center">Personal Information</h1>
             <div className="form-group">
               <label htmlFor="name">Name</label>
-              <input
+              <input 
+              value={resumeForm.name}
+              onChange = {handleInput}
+              autoComplete='off'
                 type="text"
                 className="form-control"
                 id="name"
                 placeholder="Enter Your Name"
+                name='name'
+                
               />
             </div>
             <div className="form-group">
               <label htmlFor="contact">Your Contact</label>
-              <input
+              <input 
+              value={resumeForm.contact}
+              onChange = {handleInput}
+              autoComplete='off'
                 type="text"
                 className="form-control"
                 id="contact"
                 placeholder="Enter Your Contact "
+                name='contact'
               />
             </div>
             <div className="form-group">
               <label htmlFor="address">Your Address</label>
               <textarea
-
+               
                 className="form-control"
                 id="address"
                 placeholder="Enter Your Address "
+                name='address'
               ></textarea>
             </div>
 
@@ -88,38 +132,54 @@ const CvForm = () => {
 
               <div className="form-group">
                 <label htmlFor="facebook">facebook</label>
-                <input
+                <input 
+                value={resumeForm.facebook}
+                onChange = {handleInput}
+                autoComplete='off'
                   type="text"
                   className="form-control"
                   id="facebook"
                   placeholder="Enter here "
+                  name='facebook'
                 />
               </div>
               <div className="form-group">
                 <label htmlFor="instagram">instagram</label>
-                <input
+                <input 
+                value={resumeForm.instagram}
+                onChange = {handleInput}
+                autoComplete='off'
                   type="text"
                   className="form-control"
                   id="instagram"
                   placeholder="Enter here "
+                  name='instagram'
                 />
               </div>
               <div className="form-group">
                 <label htmlFor="github">github</label>
-                <input
+                <input 
+                value={resumeForm.github}
+                onChange = {handleInput}
+                autoComplete='off'
                   type="text"
                   className="form-control"
                   id="github"
                   placeholder="Enter here "
+                  name='github'
                 />
               </div>
               <div className="form-group">
                 <label htmlFor="linkedIn">linkedIn</label>
-                <input
+                <input 
+                value={resumeForm.linkedin}
+                onChange = {handleInput}
+                autoComplete='off'
                   type="text"
                   className="form-control"
                   id="linkedIn"
                   placeholder="Enter here "
+                  name='linkedin'
                 />
               </div>
             </div>
@@ -136,6 +196,7 @@ const CvForm = () => {
 
                 className="form-control"
                 placeholder="Enter here "
+                name='name'
               ></textarea>
             </div>
             <div className="form-group" id="we">
@@ -146,6 +207,7 @@ const CvForm = () => {
                 className="form-control weField"
 
                 placeholder="Enter here "
+                name='name'
               ></textarea>
 
 
@@ -162,6 +224,7 @@ const CvForm = () => {
                 className="form-control eqField"
 
                 placeholder="Enter here "
+                name='name'
               ></textarea>
               <div className="container text-center m-3 p-2" id="aqAddButton">
                 <button onClick={addNewAQField} className="btn btn-light btn-sm">
@@ -185,18 +248,18 @@ const CvForm = () => {
           <div className="col-md-4 ">
 
 
-            <p id="nameT1" >ravi kumar dhawan</p>
-            <p id="contactT" >+91-12423423523,+91-3464356436</p>
-            <p id="addressT" >23-c sector delhi</p>
+            <p id="nameT1" >{resumeForm.name}</p>
+            <p id="contactT" >{resumeForm.contact}</p>
+            <p id="addressT" >{resumeForm.address}</p>
 
-            <p > <a id="fbT" href="#1"> </a></p>
-            <p  > <a id="instaT" href="#1"> </a></p>
-            <p  > <a id="githubT" href="#1"> </a></p>
-            <p  > <a id="inkedT" href="#1"> </a></p>
+            <p > <a id="fbT" target="_blank" href={resumeForm.facebook}>facebook </a></p>
+            <p  > <a id="instaT"  target="_blank" href={resumeForm.instagram}>instagram </a></p>
+            <p  > <a id="githubT" target="_blank" href={resumeForm.github}> github</a></p>
+            <p  > <a id="inkedT"  target="_blank" href={resumeForm.linkedin}>linkedin </a></p>
           </div>
           <div className="col-md-8 ">
 
-            <h1 id="nameT2" >ravi kumar dhawan</h1>
+            <h1 id="nameT2" >{resumeForm.name}</h1>
 
             <div className="card">
               <div className="card-header">
