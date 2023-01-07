@@ -1,9 +1,5 @@
 import React, { useState } from 'react'
 
-
-
-
-
 const CvForm = () => {
   const addNewWEField = () => {
     let newNode = document.createElement("textarea");
