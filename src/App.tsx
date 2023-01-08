@@ -1,13 +1,13 @@
-import React from 'react';
-import CvForm from './components/Cv_Form';
-import './index.css';
+import React from "react";
 
+import CvForm from "./components/Cv_Form";
+
+import "./index.css";
 
 function App() {
   return (
     <>
       <CvForm />
-
     </>
   );
 }
