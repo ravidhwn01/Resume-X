@@ -2,14 +2,14 @@ import React, { useState } from "react";
 
 const CvForm = () => {
   const addNewWEField = () => {
-    let newNode = document.createElement("textarea");
+    let newNode = document.createElement("textarea") as HTMLTextAreaElement;;
     newNode.className = "form-control weField";
     newNode.rows = 3;
     newNode.classList.add("mt-2");
     newNode.placeholder = "Enter here";
     let weOb = document.getElementById("we");
     let weAddButtonOb = document.getElementById("weAddButton");
-    weOb?.insertBefore(newNode, weAddButtonOb);
+    weOb?.insertBefore(newNode , weAddButtonOb);
   };
 
   const addNewAQField = () => {
@@ -90,6 +90,7 @@ const CvForm = () => {
             <div className="form-group">
               <label htmlFor="address">Your Address</label>
               <textarea
+                  rows={3}
                 value={resumeForm.address}
                 onChange={handleInput}
                 className="form-control"
@@ -173,7 +174,7 @@ const CvForm = () => {
             <div className="form-group" id="we">
               <label htmlFor="objective">Work Experience</label>
               <textarea
-
+                  rows={3}
                 className="form-control weField"
                 placeholder="Enter here "
                 name="name"
@@ -191,6 +192,7 @@ const CvForm = () => {
             <div className="form-group" id="aq">
               <label htmlFor="objective">Academic Qualification</label>
               <textarea
+                  rows={3}
                 className="form-control eqField"
                 placeholder="Enter here "
                 name="name"
