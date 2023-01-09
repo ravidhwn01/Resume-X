@@ -32,6 +32,8 @@ const CvForm = () => {
     github: "",
     linkedin: "",
     objective: "",
+    we : "",
+    aq : "",
   });
 
   const handleInput = (event: any) => {
@@ -46,6 +48,19 @@ const CvForm = () => {
   const generateCV = (e: any) => {
     e.preventDefault();
     // const newRecord = { ...resumeForm, id: new Date().getTime().toString() };
+    // let wes = document.getElementsByClassName("weField");
+    // let str = "";
+    // for (let e of wes) {
+    //   str = str + `<li> ${e.innerHTML} </li>`;
+    // }
+    // document.getElementById("weT")!.innerHTML = str;
+    // // academic qualifications
+    // let aqs = document.getElementsByClassName("eqField");
+    // let str2 = "";
+    // for (let e of aqs) {
+    //   str2 = str2 + `<li> ${e.innerHTML} </li>`;
+    // }
+    // document.getElementById("aqT")!.innerHTML = str2;
     document.getElementById("cv-form")!.style.display = "none";
     document.getElementById("cv-template")!.style.display = "block";
   };
@@ -168,16 +183,18 @@ const CvForm = () => {
                 id="objective"
                 className="form-control"
                 placeholder="Enter here "
-                name="name"
+                name="objective"
               ></textarea>
             </div>
             <div className="form-group" id="we">
-              <label htmlFor="objective">Work Experience</label>
+              <label htmlFor="we">Work Experience</label>
               <textarea
+              value={resumeForm.we}
+              onChange={handleInput}
                   rows={3}
                 className="form-control weField"
                 placeholder="Enter here "
-                name="name"
+                name="we"
               ></textarea>
 
               <div className="container text-center m-3 p-2" id="weAddButton">
@@ -190,12 +207,14 @@ const CvForm = () => {
               </div>
             </div>
             <div className="form-group" id="aq">
-              <label htmlFor="objective">Academic Qualification</label>
+              <label htmlFor="aq">Academic Qualification</label>
               <textarea
+              value={resumeForm.aq}
+              onChange={handleInput}
                   rows={3}
                 className="form-control eqField"
                 placeholder="Enter here "
-                name="name"
+                name="aq"
               ></textarea>
               <div className="container text-center m-3 p-2" id="aqAddButton">
                 <button
@@ -268,17 +287,9 @@ const CvForm = () => {
                   <h3>Work Experience</h3>
                   <ul id="weT">
                     <li>
-                      Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                      Ad, sed.
+                      {resumeForm.we}
                     </li>
-                    <li>
-                      Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                      Ad, sed.
-                    </li>
-                    <li>
-                      Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                      Ad, sed.
-                    </li>
+                   
                   </ul>
                 </div>
               </div>
@@ -289,17 +300,9 @@ const CvForm = () => {
                   <h3>Academic Qualification</h3>
                   <ul id="aqT">
                     <li>
-                      Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                      Ad, sed.
+                     {resumeForm.aq}
                     </li>
-                    <li>
-                      Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                      Ad, sed.
-                    </li>
-                    <li>
-                      Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                      Ad, sed.
-                    </li>
+                   
                   </ul>
                 </div>
               </div>
